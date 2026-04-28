@@ -21,6 +21,10 @@ app.options(/.*/, cors());
 app.use("/api/auth", authRoutes);
 app.use("/api/products", saltyRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API funcionando");
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
 });
