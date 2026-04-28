@@ -21,7 +21,7 @@ export async function loginUser(req, res) {
 }
 
 export async function registerUser(req, res) {
-  const {name, email, phone, password} = req.body;
+  const { name, email, phone, password } = req.body;
 
   try {
     const existingUser = await pool.query(
@@ -39,8 +39,7 @@ export async function registerUser(req, res) {
     );
 
     res.json({ success: true, user: result.rows[0] });
-    localStorage.setItem('userEmail', email);
-    localStorage.setItem('userPassword', password);
+
   } catch (error) {
     console.error("Erro ao registrar:", error);
     res.status(500).json({ success: false, message: "Erro interno do servidor" });
