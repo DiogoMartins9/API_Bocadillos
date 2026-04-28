@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
-import candiesRoutes from "./routes/candiesRoutes.js";
+import saltyRoutes from "./routes/saltyRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,7 +19,7 @@ app.use(
 app.options(/.*/, cors());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/products", candiesRoutes);
+app.use("/api/products", saltyRoutes);
 
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
