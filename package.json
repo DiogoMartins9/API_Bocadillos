@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "echo build ok",
+    "dev": "node server.js"
+  },
   "dependencies": {
     "axios": "^1.15.2",
     "cors": "^2.8.6",
